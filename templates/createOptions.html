@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+
+<style>
+  .valores {
+    display: none;
+  }
+</style>
+
+
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-md-2">
+      {% with mensajes = get_flashed_messages() %}
+      <!--- guarda el mensaje-->
+      {% if mensajes %}
+      <!--- comprueba si existte mensajes-->
+      {%for mensaje in mensajes %}
+      <!--- recorro mensajes-->
+      <!--- muestro mensajes-->
+      <div class="alert alert-warning alert-dismissible" id="alert" role="alert">
+        <strong>{{mensaje}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+    </div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Crear Respuesta</h5>
+          <form action="/insertOption" method="POST">
+            <div class="form-group">
+              <label for="opcion">Respuesta</label>
+              <textarea class="form-control" name="opcion" id="opcion" rows="2"></textarea>
+              <input type="hidden" name="id-op" id="id" value="{{id}}" required>
+            </div>
+
+            <!-- mas opciones 
+        <div class="col-md-12">
+          <div id="fields"></div>
+          <button type="button" class="add-field btn btn-link">Add field</button>
+          <button type="button" class="remove-field btn btn-link">Remove</button>
+        </div>
+        -->
+
+        </div>
+
+        <div class="card-footer">
+          <div class="form-group">
+            <button class="form-control btn btn-primary btn-block" type="submit" name="Boton"
+              id="Boton">Guardar</button>
+          </div>
+        </div>
+      </form>
+      </div>
+
+
+    </div>
+    <div class="col-md-2"></div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,1040 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<style>
+    
+.checkbox-circle label {
+    padding-left: 37px!important;
+}
+canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        }
+
+ 
+</style>
+
+
+<div class="wrapper">
+    <div class="image-holder">
+        <a href="/createQuestion" class="btn btn-md btn-success">Crear pregunta</a>
+        <!--<img src="{{url_for('static', filename='img/form-wizard.png')}}" alt="">-->
+        <!---GRAFICA-->
+        <div style="width:100%">
+            <canvas id="canvas"></canvas>
+        </div>
+        <input type="hidden" id="ejex" name="ejex" value="{{ejex}}">
+        <input type="hidden" id="ejey" name="ejey" value="{{ejey}}">
+       
+    </div>
+    <!--
+    <form action="/Math" method="POST">
+        <div class="form-header">
+            <a href="#">#TransformacionDigital</a>
+            <h3>¿ Como convertir mi negocio en digital ?</h3>
+            <p align="justify">El siguiente grupo de preguntas nos ayudará a identificar sus objetivos y el estado actual de su negocio para poder definir una ruta que le permita aprovechar al máximo la tecnología potencial digital que hoy está a su alcance. <br>
+
+                Sea sincero y estricto con sus respuestas. De ellas depende ganar la claridad de los pasos a seguir para su transformación. Los resultados serán enviados al correo electrónico que usted registre.</p><br>
+        </div>
+        <div id="wizard">-->
+            <!-- SECTION 1 CONVERTIR MI NEGOCIO EN DIGITAL-->
+            <!--
+            <h4></h4>
+            <section>
+                <div class="form-row" style="margin-bottom: 26px;">
+                    <label for="">
+                        Mi principal objetivo es que mis clientes
+                    </label>
+                    <div class="form-holder">
+                        <select name="RT00" id="RT00" class="form-control" required>
+                            <option value="" selected disabled>Selecciona</option>
+                            <option value="Me busquen cada vez que necesiten mi servicio" class="option">Me busquen cada vez que necesiten mi servicio</option>
+                            <option value="Tengan acceso directo a las soluciones que proveo" class="option">Tengan acceso directo a las soluciones que proveo</option>
+                            <option value="Sean leales a mis productos o servicios" class="option">Sean leales a mis productos o servicios</option>
+                            <option value="Me generen alta rentabilidad" class="option">Me generen alta rentabilidad</option>
+                        </select>
+                        <i class="zmdi zmdi-caret-down"></i>
+                    </div>
+                </div>-->
+                <!-- RADIO BUTTONS # 1-->
+                <!--
+                <h4>Quiero utilizar tecnología para:</h4><br>
+                <div class="form-row" style="margin-bottom: 50px;">
+                    <label for="">
+                        Relación con clientes
+                    </label>
+                    <div class="form-holder">
+                        <div class="checkbox-circle">
+                            <label class="male">
+                                <input type="radio" name="RT01" value="No" checked required> No<br>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="male">
+                                <input type="radio" name="RT01" value="Sólo si necesario"> Sólo si necesario<br>
+                                <span class="checkmark"></span>
+                            </label>
+
+                            
+                            
+                        </div>
+                        <div class="checkbox-circle">
+                            <label class="female">
+                                <input type="radio" name="RT01" value="Tanto como pueda"> Tanto como pueda<br>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="female">
+                                <input type="radio" name="RT01" value="Que sea automático"> Que sea automático<br>
+                                <span class="checkmark"></span>
+                            </label>
+                        
+                        </div>
+
+                    </div>
+                </div>-->
+
+                <!-- RADIO BUTTONS # 2-->
+              <!--
+                <div class="form-row" style="margin-bottom: 50px;">
+                    <label for="">
+                        Manejo de mis procesos internos
+                    </label>
+                    <div class="form-holder">
+                        <div class="checkbox-circle">
+                            <label class="male">
+                                <input type="radio" name="RT02" value="No" checked required> No<br>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="male">
+                                <input type="radio" name="RT02" value="Sólo si necesario"> Sólo si necesario<br>
+                                <span class="checkmark"></span>
+                            </label>
+
+                            
+                            
+                        </div>
+                        <div class="checkbox-circle">
+                            <label class="female">
+                                <input type="radio" name="RT02" value="Tanto como pueda"> Tanto como pueda<br>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="female">
+                                <input type="radio" name="RT02" value="Que sea automático"> Que sea automático<br>
+                                <span class="checkmark"></span>
+                            </label>
+                        
+                        </div>
+
+                    </div>
+                </div>-->
+
+                   <!-- RADIO BUTTONS # 3-->
+              <!--
+                   <div class="form-row" style="margin-bottom: 50px;">
+                    <label for="">
+                        Relación con proveedores
+                    </label>
+                    <div class="form-holder">
+                        <div class="checkbox-circle">
+                            <label class="male">
+                                <input type="radio" name="RT03" value="No" checked required> No<br>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="male">
+                                <input type="radio" name="RT03" value="Sólo si necesario"> Sólo si necesario<br>
+                                <span class="checkmark"></span>
+                            </label>
+
+                            
+                            
+                        </div>
+                        <div class="checkbox-circle">
+                            <label class="female">
+                                <input type="radio" name="RT03" value="Tanto como pueda"> Tanto como pueda<br>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="female">
+                                <input type="radio" name="RT03" value="Que sea automático"> Que sea automático<br>
+                                <span class="checkmark"></span>
+                            </label>
+                        
+                        </div>
+
+                    </div>
+                </div>-->
+
+                
+                   <!-- RADIO BUTTONS # 4-->
+              <!--
+                   <div class="form-row" style="margin-bottom: 50px;">
+                    <label for="">
+                        Mercadeo
+                    </label>
+                    <div class="form-holder">
+                        <div class="checkbox-circle">
+                            <label class="male">
+                                <input type="radio" name="RT04" value="No" checked required> No<br>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="male">
+                                <input type="radio" name="RT04" value="Sólo si necesario"> Sólo si necesario<br>
+                                <span class="checkmark"></span>
+                            </label>
+
+                            
+                            
+                        </div>
+                        <div class="checkbox-circle">
+                            <label class="female">
+                                <input type="radio" name="RT04" value="Tanto como pueda"> Tanto como pueda<br>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="female">
+                                <input type="radio" name="RT04" value="Que sea automático"> Que sea automático<br>
+                                <span class="checkmark"></span>
+                            </label>
+                        
+                        </div>
+
+                    </div>
+                </div>-->
+
+                 <!-- RADIO BUTTONS # 5-->
+              <!--
+                 <div class="form-row" style="margin-bottom: 50px;">
+                    <label for="">
+                        Manejo de Ingresos
+                    </label>
+                    <div class="form-holder">
+                        <div class="checkbox-circle">
+                            <label class="male">
+                                <input type="radio" name="RT05" value="No" checked required> No<br>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="male">
+                                <input type="radio" name="RT05" value="Sólo si necesario"> Sólo si necesario<br>
+                                <span class="checkmark"></span>
+                            </label>
+
+                            
+                            
+                        </div>
+                        <div class="checkbox-circle">
+                            <label class="female">
+                                <input type="radio" name="RT05" value="Tanto como pueda"> Tanto como pueda<br>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="female">
+                                <input type="radio" name="RT05" value="Que sea automático"> Que sea automático<br>
+                                <span class="checkmark"></span>
+                            </label>
+                        
+                        </div>
+
+                    </div>
+                </div>-->
+
+                <!--<div class="form-row">
+                    <label for="">
+                        Preferred System:
+                    </label>
+                    <div class="form-holder">
+                        <select name="" id="" class="form-control">
+                            <option value="canvas" class="option">Canvas</option>
+                            <option value="svg" class="option">Svg</option>
+                        </select>
+                        <i class="zmdi zmdi-caret-down"></i>
+                    </div>
+                </div>	
+                <div class="form-row">
+                    <label for="">
+                        College / Department:
+                    </label>
+                    <div class="form-holder">
+                        <select name="" id="" class="form-control">
+                            <option value="florida" class="option">University of Florida</option>
+                            <option value="havard" class="option">University of Havard</option>
+                            <option value="oxford" class="option">University of Oxford</option>
+                        </select>
+                        <i class="zmdi zmdi-caret-down"></i>
+                    </div>
+                </div>	
+                <div class="form-row">
+                    <label for="">
+                        Term:
+                    </label>
+                    <div class="form-holder">
+                        <select name="" id="" class="form-control">
+                            <option value="" selected disabled>Select Term</option>
+                            <option value="term 1" class="option">Term 1</option>
+                            <option value="term 2" class="option">Term 2</option>
+                            <option value="term 3" class="option">Term 3</option>
+                        </select>
+                        <i class="zmdi zmdi-caret-down"></i>
+                    </div>
+                </div>	
+                <div class="form-row">
+                    <label for="">
+                        Instructor Username:
+                    </label>
+                    <div class="form-holder">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>	-->	
+           <!-- </section>-->
+            
+            <!-- SECTION 2 MERCADO-->
+            <!--
+            <h4></h4>
+            <section>
+                <h4>Mercado</h4>
+                <p>El conjunto de personas o empresas que estan dispuestas a consumir un conjunto de productos o servicios</p><br>
+
+                <div class="form-row">
+                    <label for="">
+                        Al caracterizar a sus clientes usted utiliza *
+                    </label>
+                    <div class="form-holder">
+                        <select name="RT06" id="RT06" class="form-control" required>
+                            <option value="" selected disabled>Selecciona</option>
+                            <option value="1" class="option">Su experiencia en el negocio</option>
+                            <option value="2" class="option">Reuniones o conversaciones con su equipo de trabajo</option>
+                            <option value="3" class="option">Conversaciones con sus clientes</option>
+                            <option value="4" class="option">Matrices en excel u otros programas que alimenta directamente usted o su equipo</option>
+                            <option value="5" class="option">Dashboard con indicadores que provienen de CRM, redes sociales y/o sistemas de registro de ventas</option>
+                            <option value="6" class="option">No los caracteriza</option>
+                            <option value="7" class="option">Otro</option>
+                        </select>
+                        <i class="zmdi zmdi-caret-down"></i>-->
+                        <!--DATOS A ENVIAR PREGUNTA 1 PESTAÑA SEGMENTO DEL EXCEL-->
+                        <!--
+                        <input type="hidden" class="form-control" name="SCc1" id="SCc1">
+                        <input type="hidden" class="form-control" name="SCc2" id="SCc2">
+                        <input type="hidden" class="form-control" name="SCp1" id="SCp1">
+                        <input type="hidden" class="form-control" name="SCp2" id="SCp2">
+                        <input type="hidden" class="form-control" name="SCc3" id="SCc3">
+                        <input type="hidden" class="form-control" name="SCd" id="SCd">
+                        -->
+                        <!----------------------------------------------------------->
+                        <!--
+                    </div>
+                </div>	
+                <div class="form-row">
+                    <label for="">
+                        Frente a la satisfacción de los clientes con la promesa de valor de la empresa, usted *
+                    </label>
+                    <div class="form-holder">
+                        <select name="RT07" id="RT07" class="form-control" required>
+                            <option value="" selected disabled>Selecciona</option>
+                            <option value="1" class="option">Considera que si no hay reclamaciones o PQRS están satisfechos</option>
+                            <option value="2" class="option">La identfica a través de reuniones o conversaciones con su equipo de trabajo o con sus clientes</option>
+                            <option value="3" class="option">Terceriza a consultores que realizan estudios y/o encuesta</option>
+                            <option value="4" class="option">Matrices en excel u otros programas que alimenta directamente usted o su equipo</option>
+                            <option value="5" class="option">Cuenta con indicadores y estrategias de medición que implementa y monitorea directamente</option>
+                            <option value="6" class="option">Cuenta con procesos estructurados e implementados</option>
+                            <option value="7" class="option">No cuenta con información</option>
+                            <option value="8" class="option">Otro</option>
+                        </select>
+                        <i class="zmdi zmdi-caret-down"></i>-->
+                        <!--DATOS A ENVIAR PREGUNTA 2 PESTAÑA PROPUESTA Y RELACION DEL EXCEL
+                        <input type="hidden" class="form-control" name="PVc1" id="PVc1">
+                        <input type="hidden" class="form-control" name="PVc2" id="PVc2">
+                        <input type="hidden" class="form-control" name="PVp1" id="PVp1">
+                        <input type="hidden" class="form-control" name="PVp2" id="PVp2">
+                        <input type="hidden" class="form-control" name="PVc3" id="PVc3">
+                        <input type="hidden" class="form-control" name="PVd" id="PVd">
+                        <input type="hidden" class="form-control" name="RCc" id="RCc">
+                        <input type="hidden" class="form-control" name="RCta" id="RCta">
+                        <input type="hidden" class="form-control" name="RCtc" id="RCtc">
+                        <input type="hidden" class="form-control" name="RCd" id="RCd">
+                        ----------------------------------------------------------->
+<!--
+                    </div>
+                </div>	
+                <div class="form-row">
+                    <label for="">
+                        Con respecto a los canales de comunicación con los clientes *
+                    </label>
+                    <div class="form-holder">
+                        <select name="RT08" id="RT08" class="form-control" required>
+                            <option value="" selected disabled>Selecciona</option>
+                            <option value="1" class="option">No es clara la contribución de los canales actuales a las necesidades de los clientes con la empresa ni de la empresa con los clientes</option>
+                            <option value="2" class="option">Soportan los procesos comerciales y requieren dedicación de mas de una persona</option>
+                            <option value="3" class="option">Soportan los procesos comerciales y requieren dedicación de menos de una persona</option>
+                            <option value="4" class="option">Soportan procesos comerciales y de servicio al cliente, y son automáticos</option>
+                            <option value="5" class="option">Cuentan con procesos estructurados e implementados que cubren todas las necesidades de comunicación</option>
+                           <option value="6" class="option">Otro</option>
+                        </select>
+                        <i class="zmdi zmdi-caret-down"></i>-->
+                        <!--DATOS A ENVIAR PREGUNTA 3 PESTAÑA CANALES DEL EXCEL
+                        <input type="hidden" class="form-control" name="CCp" id="CCp">
+                        <input type="hidden" class="form-control" name="CCc" id="CCc">
+                        <input type="hidden" class="form-control" name="CCta" id="CCta">
+                        <input type="hidden" class="form-control" name="CCtc" id="CCtc">
+                        <input type="hidden" class="form-control" name="CCd" id="CCd">                       
+                        --------------------------------------------------------->
+<!--
+                    </div>
+                </div>
+                	
+                <div class="form-row" style="margin-bottom: 3.4vh">
+                    <label for="">
+                        Con respecto a la re-compra de sus productos o servicios *
+                    </label>
+                    <div class="form-holder">
+                        <select name="RT09" id="RT09" class="form-control" required>
+                            <option value="" selected disabled>Selecciona</option>
+                            <option value="El modelo de negocio tiene dificultad para hacer re-compra" class="option">El modelo de negocio tiene dificultad para hacer re-compra</option>
+                            <option value="El modelo de negocio permite la re-compra pero esta no se mide" class="option">El modelo de negocio permite la re-compra pero esta no se mide</option>
+                            <option value="El modelo de negocio permite la re-compra, esta se cuantifica periódicamente" class="option">El modelo de negocio permite la re-compra, esta se cuantifica periódicamente</option>
+                            <option value="Cuenta con procesos estructurados e implementados para aumentarla" class="option">Cuenta con procesos estructurados e implementados para aumentarla</option>
+                            <option value="Otro" class="option">Otro</option>
+                        </select>
+                        <i class="zmdi zmdi-caret-down"></i>
+                       
+                    </div>
+                </div>	
+
+                <div class="form-row" style="margin-bottom: 3.4vh">
+                    <label for="">
+                        Frente a la identificación de requerimientos, necesidades o nuevas tendencias de su mercado                    </label>
+                    <div class="form-holder">
+                        <select name="RT10" id="RT10" class="form-control" required>
+                            <option value="" selected disabled>Selecciona</option>
+                            <option value="1" class="option">Cuenta con procesos estructurados e implementados</option>
+                            <option value="2" class="option">Cuenta con fuentes de monitoreo periódico que integra en la planeación y toma de decisiones de la empresa</option>
+                            <option value="3" class="option">No hay un esquema claro para realizarlas, cada caso se maneja distinto</option>
+                            <option value="4" class="option">Se mantiene informado revisando por ejemplo redes sociales, medios de comunicación y eventos</option>
+                            <option value="5" class="option">Realiza o tercerizas sus investigaciones en comparación con otras empresas del sector</option>
+                            <option value="6" class="option">Realiza o terceriza acciones de investigación en reacción a baja en ventas o volumen de clientes</option>
+                            <option value="7" class="option">No adelanta ninguna acción particular</option>
+                        </select>
+                        <i class="zmdi zmdi-caret-down"></i>-->
+                        <!--DATOS A ENVIAR PREGUNTA 4 PESTAÑA ACTIVIDADES DEL EXCEL
+                        <input type="hidden" class="form-control" name="ACCta" id="ACCta">
+                        <input type="hidden" class="form-control" name="ACCtc" id="ACCtc">
+                        <input type="hidden" class="form-control" name="ACCd" id="ACCd">                       
+                        -------------------------------------------------------<!--
+                    </div>
+                </div>	-->
+<!--
+                <div class="form-row" style="margin-bottom: 50px;">
+                    <label for="">
+                        Gender:
+                    </label>
+                    <div class="form-holder">
+                        <div class="checkbox-circle">
+                            <label class="male">
+                                <input type="radio" name="gender" value="male" checked> Male<br>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="female">
+                                <input type="radio" name="gender" value="female"> Female<br>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label>
+                                <input type="radio" name="gender" value="transgender">Transgender<br>
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>	
+-->	
+<!--
+            </section>
+            -->	
+            <!-- SECTION 3 OPERACION DE LA EMPRESA-->
+            <!--
+            <h4></h4>
+            <section> 
+                <h4>Operacion de la empresa</h4>
+                <p>Caracteristicas propias de su organizacion</p><br>
+
+                <div class="form-row">
+                    <label for="">
+                        Con respecto a su modelo de ingresos *
+                    </label>
+
+                    <div class="form-holder">
+                        <select name="RT11" id="RT11" class="form-control" required>
+                            <option value="" selected disabled>Selecciona</option>
+                            <option value="1" class="option">Los ingresos generados por sus clientes no cubren la operacion total de la empresa</option>
+                            <option value="2" class="option">Los ingresos generados por sus clientes cubren los costos de operacion</option>
+                            <option value="3" class="option">Los ingresos generados por sus clientes generan utilidades constantes a la empresa</option>
+                            <option value="4" class="option">Pago en línea (a traves de plataformas de pago)</option>
+                            <option value="5" class="option">No existe una forma clara en que los clientes generan ingresos para la empresa</option>
+                            <option value="6" class="option">Otro</option>
+                        </select>
+                        <i class="zmdi zmdi-caret-down"></i>-->
+                        <!--DATOS A ENVIAR PREGUNTA 4 PESTAÑA INGRESOS DEL EXCEL
+                        <input type="hidden" class="form-control" name="Ic" id="Ic">
+                        <input type="hidden" class="form-control" name="Ip" id="Ip">
+                        <input type="hidden" class="form-control" name="Ita" id="Ita">
+                        <input type="hidden" class="form-control" name="Itc" id="Itc">
+                        <input type="hidden" class="form-control" name="Id" id="Id">
+                        --------------------------------------------------------->
+                        <!--
+                    </div>
+                </div>	
+
+                <div class="form-row">
+                    <label for="">
+                        Frente a la forma de pago para sus clientes
+                    </label>
+                    <div class="form-holder">
+                        <select name="RT12" id="RT12" class="form-control" required>
+                            <option value="" selected disabled>Selecciona</option>
+                            <option value="1" class="option">Pago en punto de venta</option>
+                            <option value="2" class="option">Pago contra entrega</option>
+                            <option value="3" class="option">A través de puntos de pago de terceros</option>
+                            <option value="4" class="option">Pago en línea (a traves de plataformas de pago)</option>
+                            <option value="5" class="option">Pago en banco una vez facturado el servicio</option>
+                            <option value="6" class="option">Otro</option>
+                        </select>
+                        <i class="zmdi zmdi-caret-down"></i>-->
+                        <!--DATOS A ENVIAR PREGUNTA 5 PESTAÑA RECURSOS DEL EXCEL
+                        <input type="hidden" class="form-control" name="RECta" id="RECta">
+                        <input type="hidden" class="form-control" name="RECtc" id="RECtc">
+                        <input type="hidden" class="form-control" name="RECd" id="RECd">
+                        ---------------------------------------------------------->
+                        <!--
+                    </div>
+                </div>	
+
+                <div class="form-row">
+                    <label for="">
+                        Con respecto a la información financiera
+                    </label>
+                    <div class="form-holder">
+                        <select name="RT13" id="RT13" class="form-control" required>
+                            <option value="" selected disabled>Selecciona</option>
+                            <option value="1" class="option">La información tiene un tratamiento para pago de impuestos y construcción de informes con una periodicidad mensual o semestral o anual</option>
+                            <option value="2" class="option">La información se trata para la toma de deciciones con una periodicidad semanal, mensual, bimestral, trimestral</option>
+                            <option value="3" class="option">Cuento con información en tiempo real para la toma de decisiones</option>
+                            <option value="4" class="option">Otro</option>
+                        </select>
+                        <i class="zmdi zmdi-caret-down"></i>-->
+                        <!--DATOS A ENVIAR PREGUNTA 6 PESTAÑA COSTOS1 DEL EXCEL
+                        <input type="hidden" class="form-control" name="ECta1" id="ECta1">
+                        <input type="hidden" class="form-control" name="ECtc1" id="ECtc1">
+                        <input type="hidden" class="form-control" name="ECd1" id="ECd1">
+                        ---------------------------------------------------------->
+                        <!--
+                    </div>
+                </div>	
+
+                <div class="form-row">
+                    <label for="">
+                        Frente al uso de tecnología en las áreas *
+                    </label>
+                    <div class="form-holder">
+                        <select name="RT14" id="RT14" class="form-control" required>
+                            <option value="" selected disabled>Selecciona</option>
+                            <option value="La mayoría del equipo de trabajo muestra su rechazo y/o preocupación" class="option">La mayoría del equipo de trabajo muestra su rechazo y/o preocupación</option>
+                            <option value="La mayoria del equipo es indiferente en términos de rechazo o aprobación" class="option">La mayoria del equipo es indiferente en términos de rechazo o aprobación</option>
+                            <option value="La mayoría del equipo es propositivo" class="option">La mayoría del equipo es propositivo</option>
+                            <option value=">La mayoría del equipo es propositivo y fomenta que otros prueben" class="option">La mayoría del equipo es propositivo y fomenta que otros prueben</option>
+                            <option value="Otro" class="option">Otro</option>
+                        </select>
+                        <i class="zmdi zmdi-caret-down"></i>
+                    </div>
+                </div>	
+
+                <div class="form-row">
+                    <label for="">
+                        Frente a las habilidades en el uso de tecnología
+                    </label>
+                    <div class="form-holder">
+                        <select name="RT15" id="RT15" class="form-control" required>
+                            <option value="" selected disabled>Selecciona</option>
+                            <option value="1" class="option">La mayoría de los integrantes del equipo no cuenta con habilidades</option>
+                            <option value="2" class="option">La mayoría de los integrantes del equipo cuenta con habilidades básicas (uso de algunas herramientas)</option>
+                            <option value="3" class="option">La mayoría de los integrantes del equipo cuenta con habilidades intermedias (uso fluído de herramientas de diversos tipos)</option>
+                            <option value="4" class="option">La mayoría de los integrantes del equipo cuenta con habilidades avanzadas (no solo uso, sino aprovechamiento estratégico)</option>
+                        </select>
+                        <i class="zmdi zmdi-caret-down"></i>-->
+                        <!--DATOS A ENVIAR PREGUNTA 7 PESTAÑA COSTOS2 DEL EXCEL
+                        <input type="hidden" class="form-control" name="ECta2" id="ECta2">
+                        <input type="hidden" class="form-control" name="ECtc2" id="ECtc2">
+                        <input type="hidden" class="form-control" name="ECd2" id="ECd2">
+                        --------------------------------------------------------->
+                         <!--
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="">
+                        Frente a las alianzas
+                    </label>
+                    <div class="form-holder">
+                        <select name="RT16" id="RT16" class="form-control" required>
+                            <option value="" selected disabled>Selecciona</option>
+                            <option value="1" class="option">No se cuenta con alianzas, no hay interés de hacerlo</option>
+                            <option value="2" class="option">No se cuenta con alianzas, pero hay interés de hacerlo</option>
+                            <option value="3" class="option">No hay un esquema claro para realizarlas, cada caso se maneja distinto</option>
+                            <option value="4" class="option">Se cuenta con aliados actualmente, no obstante es difícil la alineación para aprovechar estas alianzas</option>
+                            <option value="5" class="option">Se cuenta con aliados actualmente y las acciones que se realizan en el marco de las alianzas contribuyen a la prestación de la promesa de valor</option>
+                            <option value="6" class="option">Se cuenta con aliados actualmente y las acciones que se realizan en el marco de las alianzas contribuyen a la evolución de cada empresa</option>
+                            <option value="7" class="option">No se cuenta con alianzas, no hay interés de hacerlo</option>
+                        </select>
+                        <i class="zmdi zmdi-caret-down"></i>-->
+                        <!--DATOS A ENVIAR PREGUNTA 8 PESTAÑA ALIADOS DEL EXCEL
+                        <input type="hidden" class="form-control" name="ACta" id="ACta">
+                        <input type="hidden" class="form-control" name="ACtc" id="ACtc">
+                        <input type="hidden" class="form-control" name="ACd" id="ACd">
+                        -------------------------------------------------------->
+                        <!--
+                    </div>
+                </div>
+                -->
+<!--
+                 <div class="form-row">
+                    <label for="">
+                        Section(s):
+                    </label>
+                    <div class="form-holder">
+                        <input type="text" class="form-control" placeholder="Ex. 3679 or 33fa, 4295">
+                    </div>
+                </div>	
+                <div class="form-row" style="margin-bottom: 38px">
+                    <label for="">
+                        Select Teacher:
+                    </label>
+                    <div class="form-holder">
+                        <select name="" id="" class="form-control">
+                            <option value="frances meyer" class="option">Frances Meyer</option>
+                            <option value="johan lucas" class="option">Johan Lucas</option>
+                            <option value="merry linn" class="option">Merry Linn</option>
+                        </select>
+                        <i class="zmdi zmdi-caret-down"></i>
+                    </div>
+                </div>	
+                <div class="checkbox-circle" style="margin-bottom: 48px;">
+                    <label>
+                        <input type="checkbox" checked>I agree all statement in Terms & Conditions
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+-->              
+<!-- 
+            </section>
+-->
+            <!--SECTION 4 TECNOLOGIA UTILIZADA-->
+            <!--
+            <h4></h4>
+            <section>
+                <h4>Tecnología utilizada</h4>
+                <p>Describa la tecnología digital que utiliza hoy en día.</p><br>
+
+                <div class="form-row">
+                    <label for="">
+                        ¿Utiliza software para el manejo de los procesos internos de su organización? Si es así, ¿Cuál?
+                    </label>
+                    <div class="form-holder">
+                        <input type="text" name="RT17" id="RT17" class="form-control" placeholder="">
+                    </div>
+                </div>	
+
+                <div class="form-row">
+                    <label for="">
+                        ¿Utiliza software para la comunicación o registro de clientes?
+                    </label>
+                    <div class="form-holder">
+                        <input type="text" name="RT18" id="RT18" class="form-control" placeholder="">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <label for="">
+                        ¿Utiliza software para la promoción digital de sus productos o servicios?
+                    </label>
+                    <div class="form-holder">
+                        <input type="text" name="RT19" id="RT19" class="form-control" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="">
+                        ¿Utiliza software para el intercambio de datos con sus proveedores o aliados?
+                    </label>
+                    <div class="form-holder">
+                        <input type="text" name="RT20" id="RT20" class="form-control" placeholder="">
+                    </div>
+                </div>
+
+
+            </section>-->
+            
+           <!--SECTION 5 TECNOLOGIA UTILIZADA-->
+           <!--
+            <h4></h4>
+            <section>
+
+                <h4>Cierre</h4>
+                <p>Al correo electrónico que usted nos provea le enviaremos los resultados del diagnóstico y la hoja de ruta resultante.</p><br>
+
+                <div class="form-row">
+                    <label for="">
+                        Dirección de correo electrónico *
+                    </label>
+                    <div class="form-holder">
+                        <input type="email" name="RT21" id="RT21" class="form-control" placeholder="" required>
+                    </div>
+                </div>	
+
+                <div class="form-row">
+                    <label for="">
+                        Nombre de la Empresa *
+                    </label>
+                    <div class="form-holder">
+                        <input type="text" name="RT22" id="RT22" class="form-control" placeholder="" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <label for="">
+                        Fecha de Constitucion *
+                    </label>
+                    <div class="form-holder">
+                        <input type="date" name="RT23" id="RT23" class="form-control" placeholder="" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="">
+                        ¿Cuál es el numero de trabajadores de su empresa? (Independiente del tipo de vinculacion) *
+                    </label>
+                    <div class="form-holder">
+                        <select name="RT24" id="RT24" class="form-control" required>
+                            <option value="" selected disabled>Selecciona</option>
+                            <option value="Menos de Cinco" class="option">Menos de Cinco</option>
+                            <option value="Entre Cinco y Diez" class="option">Entre Cinco y Diez</option>
+                            <option value="Entre Diez y Veinte" class="option">Entre Diez y Veinte</option>
+                            <option value="Entre Veinte y Cincuenta" class="option">Entre Veinte y Cincuenta</option>
+                            <option value="Entre Cincuenta y Cien" class="option">Entre Cincuenta y Cien</option>
+                            <option value="Entre Cien y Quinientos" class="option">Entre Cien y Quinientos</option>
+                            <option value="Mas de Quinientos" class="option">Mas de Quinientos</option>
+                        </select>
+                        <i class="zmdi zmdi-caret-down"></i>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="">
+                        ¿Cuál es el rango de ventas anuales de su empresa? (Pesos Colombianos) *
+                    </label>
+                    <div class="form-holder">
+                        <select name="RT25" id="RT25" class="form-control" required>
+                            <option value="" selected disabled>Selecciona</option>
+                            <option value="Menos de $100 millones (USD$30,000)" class="option">Menos de $100 millones (USD$30,000)</option>
+                            <option value="Entre $100 millones y $500 Millones (USD$30,000 - USD$150,000)" class="option">Entre $100 millones y $500 Millones (USD$30,000 - USD$150,000)</option>
+                            <option value="Entre $500 millones y $3,500 Millones (USD$150,000 - USD$1,000,000)" class="option">Entre $500 millones y $3,500 Millones (USD$150,000 - USD$1,000,000)</option>
+                            <option value="Entre $3,500 millones y $15,000 millones (USD$1,000,000 - USD$4,500,000)" class="option">Entre $3,500 millones y $15,000 millones (USD$1,000,000 - USD$4,500,000)</option>
+                            <option value="Superior a $15,000 millones (Superior a USD$4,500,000" class="option">Superior a $15,000 millones (Superior a USD$4,500,000</option>
+                            
+                        </select>
+                        <i class="zmdi zmdi-caret-down"></i>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="">
+                        ¿En qué sector principal ubicaría usted a su empresa? *
+                    </label>
+                    <div class="form-holder">
+                        <input type="text" name="RT26" id="RT26" class="form-control" placeholder="" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <label for="">
+                        ¿En qué sector secundario ubicaría usted a su empresa?
+                    </label>
+                    <div class="form-holder">
+                        <input type="text" name="RT27" id="RT27" class="form-control" placeholder="" >
+                    </div>
+                </div>-->
+
+                <!---CHECKBOX---->
+                <!--
+                <h4>Uso de Redes sociales</h4><br>-->
+                 <!---CHECKBOX1---->
+<!--
+                <div class="form-row" style="margin-bottom: 50px;">
+                    <label for="">
+                        Twitter
+                    </label>
+                    <div class="form-holder">
+                        <div class="checkbox-circle">
+                            <label class="male">
+                             <input type="checkbox" name="RT28" value="Genera Ventas?"> Genera Ventas?<br>
+                            <span class="checkmark"></span>
+                            </label>
+                            <label class="male">
+                                <input type="checkbox" name="RT28" value="Publica contenido?">Publica contenido?<br>
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <label class="female">
+                                <input type="checkbox" name="RT28" value="Intercambia Mensajes?"> Intercambia Mensajes?<br>
+                                <span class="checkmark"></span>
+                            </label>
+
+                            
+                            
+                        </div>
+                       
+
+                    </div>
+                </div>-->
+                 <!---CHECKBOX 2---->
+<!--
+                 <div class="form-row" style="margin-bottom: 50px;">
+                    <label for="">
+                        Instagram
+                    </label>
+                    <div class="form-holder">
+                        <div class="checkbox-circle">
+                            <label class="male">
+                             <input type="checkbox" name="RT29" value="Genera Ventas?"> Genera Ventas?<br>
+                            <span class="checkmark"></span>
+                            </label>
+                            <label class="male">
+                                <input type="checkbox" name="RT29" value="Publica contenido?">Publica contenido?<br>
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <label class="female">
+                                <input type="checkbox" name="RT29" value="Intercambia Mensajes?"> Intercambia Mensajes?<br>
+                                <span class="checkmark"></span>
+                            </label>
+
+                            
+                            
+                        </div>
+                       
+
+                    </div>
+                </div>-->
+
+                   <!---CHECKBOX 3---->
+<!--
+                   <div class="form-row" style="margin-bottom: 50px;">
+                    <label for="">
+                        Facebook
+                    </label>
+                    <div class="form-holder">
+                        <div class="checkbox-circle">
+                            <label class="male">
+                             <input type="checkbox" name="RT30" value="Genera Ventas?"> Genera Ventas?<br>
+                            <span class="checkmark"></span>
+                            </label>
+                            <label class="male">
+                                <input type="checkbox" name="RT30" value="Publica contenido?">Publica contenido?<br>
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <label class="female">
+                                <input type="checkbox" name="RT30" value="Intercambia Mensajes?"> Intercambia Mensajes?<br>
+                                <span class="checkmark"></span>
+                            </label>
+
+                            
+                            
+                        </div>
+                       
+
+                    </div>
+                </div>-->
+
+                   <!---CHECKBOX 4---->
+<!--
+                   <div class="form-row" style="margin-bottom: 50px;">
+                    <label for="">
+                        TikTok
+                    </label>
+                    <div class="form-holder">
+                        <div class="checkbox-circle">
+                            <label class="male">
+                             <input type="checkbox" name="RT31" value="Genera Ventas?"> Genera Ventas?<br>
+                            <span class="checkmark"></span>
+                            </label>
+                            <label class="male">
+                                <input type="checkbox" name="RT31" value="Publica contenido?">Publica contenido?<br>
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <label class="female">
+                                <input type="checkbox" name="RT31" value="Intercambia Mensajes?"> Intercambia Mensajes?<br>
+                                <span class="checkmark"></span>
+                            </label>
+
+                            
+                            
+                        </div>
+                       
+
+                    </div>
+                </div>
+-->
+                   <!---CHECKBOX 5---->
+<!--
+                   <div class="form-row" style="margin-bottom: 50px;">
+                    <label for="">
+                        Linkedn
+                    </label>
+                    <div class="form-holder">
+                        <div class="checkbox-circle">
+                            <label class="male">
+                             <input type="checkbox" name="RT32" value="Genera Ventas?"> Genera Ventas?<br>
+                            <span class="checkmark"></span>
+                            </label>
+                            <label class="male">
+                                <input type="checkbox" name="RT32" value="Publica contenido?">Publica contenido?<br>
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <label class="female">
+                                <input type="checkbox" name="RT32" value="Intercambia Mensajes?"> Intercambia Mensajes?<br>
+                                <span class="checkmark"></span>
+                            </label>
+
+                            
+                            
+                        </div>
+                       
+
+                    </div>
+                </div>
+-->
+                   <!---CHECKBOX 6---->
+<!--
+                   <div class="form-row" style="margin-bottom: 50px;">
+                    <label for="">
+                        WhatsApp
+                    </label>
+                    <div class="form-holder">
+                        <div class="checkbox-circle">
+                            <label class="male">
+                             <input type="checkbox" name="RT33" value="Genera Ventas?"> Genera Ventas?<br>
+                            <span class="checkmark"></span>
+                            </label>
+                            <label class="male">
+                                <input type="checkbox" name="RT33" value="Publica contenido?">Publica contenido?<br>
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <label class="female">
+                                <input type="checkbox" name="RT33" value="Intercambia Mensajes?"> Intercambia Mensajes?<br>
+                                <span class="checkmark"></span>
+                            </label>
+
+                            
+                            
+                        </div>
+                       
+
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="">
+                        Usuario en Twitter
+                    </label>
+                    <div class="form-holder">
+                        <input type="text" name="RT34" id="RT34" class="form-control" placeholder="" >
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="">
+                        Usuario en Instagram
+                    </label>
+                    <div class="form-holder">
+                        <input type="text" name="RT35" id="RT35" class="form-control" placeholder="" >
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="">
+                        Usuario en Facebook
+                    </label>
+                    <div class="form-holder">
+                        <input type="text" name="RT36" id="RT36" class="form-control" placeholder="" >
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="">
+                        Usuario en TikTok
+                    </label>
+                    <div class="form-holder">
+                        <input type="text" name="RT37" id="RT37" class="form-control" placeholder="" >
+                    </div>
+                </div>
+             
+                <div class="form-row">
+                    <label for="">
+                        Usuario en Linkedin
+                    </label>
+                    <div class="form-holder">
+                        <input type="text" name="RT38" id="RT38" class="form-control" placeholder="" >
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label for="">
+                        Usuario en YouTube
+                    </label>
+                    <div class="form-holder">
+                        <input type="text" name="RT39" id="RT39" class="form-control" placeholder="" >
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="">
+                        Página web de la empresa
+                    </label>
+                    <div class="form-holder">
+                        <input type="text" name="RT40" id="RT40" class="form-control" placeholder="" >
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="">
+                        Persona de Contacto *
+                    </label>
+                    <div class="form-holder">
+                        <input type="text" name="RT41" id="RT41" class="form-control" placeholder="" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="">
+                        Teléfono de Contacto
+                    </label>
+                    <div class="form-holder">
+                        <input type="number" name="RT42" id="RT42" class="form-control" minlength="7" maxlength="10" placeholder="" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <label for="">
+                       Enviar
+                    </label>
+                    <div class="form-holder">
+                        <input type="submit" value="enviar">
+                    </div>
+                </div>
+                
+             
+             
+             
+             
+             
+             
+            </section>
+            -->
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block body %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-warning alert-dismissible" id="alert" role="alert">
+    <strong>{{mensaje}}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<div class="col-md-8">
+    <div class="card">
+        <h5 class="card-title">Asignar segmento y valor</h5>
+        <form action="/insertValue" method="POST">
+            <label for="segmento">Segmento</label>
+            <input type="text" class="form-control" name="segmento" id="segmento">
+            <label for="valor">Valor</label>
+            <input type="text" class="form-control" name="valor" id="valor">
+            <input type="hidden" name="id-val" id="id" value="{{id}}" required>
+            <div class="col-md-12">
+                <button type="button" class="add-field btn btn-link">Add field</button>
+                <button type="button" class="remove-field btn btn-link">Remove</button>
+            </div>
+
+            <button class="form-control btn btn-primary btn-block" type="submit" name="Boton"
+                id="Boton">Guardar</button>
+        </form>
+    </div>
+
+
+
+
+</div>
+
+
+
+{% endblock %}

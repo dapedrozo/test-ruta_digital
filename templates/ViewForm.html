@@ -1,0 +1,100 @@
+{% extends 'layout.html' %}
+{% block body %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-warning alert-dismissible" id="alert" role="alert">
+    <strong>{{mensaje}}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>id pregunta</td>
+                <td>texto pregunta</td>
+                <td>estado</td>
+                <td>fecha reg</td>
+                <td>hora reg</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pregunta in preguntas %}
+            <tr>
+                <td>{{ pregunta.0 }}</td>
+                <td>{{ pregunta.1 }}</td>
+                <td>{{ pregunta.2 }}</td>
+                <td>{{ pregunta.3 }}</td>
+                <td>{{ pregunta.4 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <td>id opcion</td>
+                <td>id pregunta</td>
+                <td>text opcion</td>
+                <td>fecha reg</td>
+                <td>hora reg</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for opcion in opciones %}
+            <tr>
+                <td>{{ opcion.0 }}</td>
+                <td>{{ opcion.1 }}</td>
+                <td>{{ opcion.2 }}</td>
+                <td>{{ opcion.3 }}</td>
+                <td>{{ opcion.4 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <td>id valores</td>
+                <td>id opciones</td>
+                <td>caracterisita valor</td>
+                <td>valor</td>
+                <td>fecha reg</td>
+                <td>hora reg</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for valor in valores %}
+            <tr>
+                <td>{{ valor.0 }}</td>
+                <td>{{ valor.1 }}</td>
+                <td>{{ valor.2 }}</td>
+                <td>{{ valor.3 }}</td>
+                <td>{{ valor.4 }}</td>
+                <td>{{ valor.5 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tbody>
+            {% for pregunta in preguntas %}
+            {% for opcion in opciones %}
+            {% if pregunta.0 == opcion.1 %}
+            <tr>
+                <td>{{ pregunta.0 }}</td>
+                <td>{{ pregunta.1 }}</td>
+                <td>{{ opcion.2 }}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

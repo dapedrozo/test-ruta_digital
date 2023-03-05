@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ruta de Transformacion Digital</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="David Pedrozo">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet"  href="{{url_for('static', filename='fonts/material-design-iconic-font/css/material-design-iconic-font.css')}}">
+
+		<!-- DATE-PICKER -->
+		<link rel="stylesheet" href="{{url_for('static', filename='vendor/date-picker/css/datepicker.min.css')}}">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+		<!--- bootstrap-->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	</head>
+	<body>
+
+        {% block body %}
+        {% endblock %}
+
+
+
+
+        <script src="{{url_for('static', filename ='js/jquery-3.3.1.min.js')}}"></script>
+		
+		<!-- JQUERY STEP -->
+		<script src="{{url_for('static', filename='js/jquery.steps.js')}}"></script>
+
+		<!-- DATE-PICKER -->
+		<script src="{{url_for('static', filename='vendor/date-picker/js/datepicker.js')}}"></script>
+		<script src="{{url_for('static', filename='vendor/date-picker/js/datepicker.en.js')}}"></script>
+
+		<!--- CHART JS-->
+		<script src="{{url_for('static', filename='vendor/Chart.js/dist/Chart.min.js')}}"></script>
+		<script src="{{url_for('static', filename='vendor/Chart.js/samples/utils.js')}}"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.js"></script>
+
+		<!---BOOTSTRAP--->
+		
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+        <script src="{{url_for('static', filename='js/main.js')}}"></script>
+        <script src="{{url_for('static', filename='js/funciones.js')}}"></script>
+<!-- Template created and distributed by Colorlib -->
+    </body>
+    </html>
+    
